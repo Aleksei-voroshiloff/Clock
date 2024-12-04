@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from 'react';
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import EditEntryPage from './components/pages/EditEntryPage';
+import ErrorPage from './components/pages/ErrorPage';
+import MainPage from './components/pages/MainPage';
+import NewEntryPage from './components/pages/NewEntryPage';
+import OneEntryPage from './components/pages/OneEntryPage';
+import Layout from './components/Layout';
+import axiosInstance, { setAccessToken } from './api/axiosInstance';
+import LoginForm from './components/ui/LoginForm';
+import RegisterForm from './components/ui/RegisterForm';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState({ status: 'logging' });
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  useEffect(() => {
+    axiosInstance('/tokens/refresh')
+      .then(({ data }) => {
+        setTimeout(() => {
+          setUser({ status: 'logged', user: data.user });
+        }, 1000);
+        setAccessToken(data.accessToken);
+      })
+      .catch(() => {
+        setUser({ status: 'guest', user: null });
+        setAccessToken('');
+      });
+  }, []);
+
+  function loginHandler(data) {
+    axiosInstance.post('/auth/login', data).then(({ data }) => {
+      setUser({ status: 'logged', user: data.user });
+      setAccessToken(data.accessToken);
+    });
+  }
+
+  function logoutHandler() {
+    axiosInstance
+      .get('/auth/logout')
+      .then(() => setUser({ status: 'guest', user: null }));
+  }
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout logoutHandler={logoutHandler} user={user} />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/',
+          element: <Navigate to="/clock" />,
+        },
+        {
+          path: '/clock',
+          element: <MainPage />,
+        },
+        { path: '/signin', element: <LoginForm loginHandler={loginHandler} /> },
+        { path: '*', element: <ErrorPage /> },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
