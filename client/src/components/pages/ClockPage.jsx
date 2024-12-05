@@ -21,9 +21,11 @@ export default function ClockPage() {
               src={`http://localhost:3000/${clock.img}`}
               alt={clock.description}
             />
-            <Carousel.Caption>
-              <h3>{clock.title}</h3>
-              <p>{clock.description}</p>
+            <Carousel.Caption style={{
+              marginLeft: '45%'
+            }}>
+              <h5>{clock.title}</h5>
+              
             </Carousel.Caption>
           </Carousel.Item>
         ))}
