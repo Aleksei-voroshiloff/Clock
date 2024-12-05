@@ -27,6 +27,7 @@ export default function ErrorPage() {
           marginTop: "150px",
         }}
       >
+        
         <Link to="/">Вернуться на главную</Link>
       </button>
     </div>
