@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 export default function ClockCard({ clock }) {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={clock.img} />
+      <Card.Img variant="top" src={`http://localhost:3000/${clock.img}`} />
       <Card.Body>
         <Card.Title>{clock.title}</Card.Title>
         <Card.Text>{clock.description}</Card.Text>

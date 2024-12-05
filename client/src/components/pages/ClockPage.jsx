@@ -15,7 +15,7 @@ export default function ClockPage() {
 
   return (
     <Row>
-      <div className='cardsList'>
+      <div className='cardsList row'>
         {clocks.map((clock) => (
           <ClockCard key={clock.id} clock={clock} />
         ))}
