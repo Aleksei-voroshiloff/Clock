@@ -96,7 +96,7 @@ const FeedbackForm = ({ initialData }) => {
             <Button
               variant="primary"
               type="submit"
-              style={{ backgroundColor: 'black', borderColor: 'black', marginTop: '15px', marginBottom: '15px', marginLeft: '45%'}}
+              style={{ textAlign: 'center', backgroundColor: 'black', borderColor: 'black', marginTop: '15px', marginBottom: '15px', marginLeft: '45%'}}
             >
               Отправить
             </Button>
