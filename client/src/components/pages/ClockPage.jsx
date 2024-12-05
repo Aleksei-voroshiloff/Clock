@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-// import ClockCard from "../ui/ClockCard";
 import { Carousel } from "react-bootstrap";
+import '../../../public/assets/styles/style.css'; // Импортируем стили
 
 export default function ClockPage() {
   const [clocks, setClocks] = useState([]);
@@ -13,23 +12,22 @@ export default function ClockPage() {
   }, []);
 
   return (
-    <Carousel>
-      {clocks.map((clock) => (
-        <Carousel.Item key={clock.id}>
-          <img
-            style={{
-              height: "",
-            }}
-            className="d-block w-100 img-fluid"
-            src={`http://localhost:3000/${clock.img}`}
-            alt={clock.description}
-          />
-          <Carousel.Caption>
-            <h3>{clock.title}</h3>
-            <p>{clock.description}</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <div className="carousel">
+      <Carousel>
+        {clocks.map((clock) => (
+          <Carousel.Item key={clock.id}>
+            <img
+              className="d-block w-100 img-fluid"
+              src={`http://localhost:3000/${clock.img}`}
+              alt={clock.description}
+            />
+            <Carousel.Caption>
+              <h3>{clock.title}</h3>
+              <p>{clock.description}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
   );
 }

@@ -15,7 +15,7 @@ import ClockPage from './components/pages/ClockPage';
 
 
 
-import ClockPage from './components/pages/ClockPage';
+// import ClockPage from './components/pages/ClockPage';
 import Contact from './components/ui/Contact';
 
 
