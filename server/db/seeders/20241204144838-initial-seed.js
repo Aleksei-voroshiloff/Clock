@@ -35,7 +35,7 @@ module.exports = {
     // Сиды для таблицы Admin
     await queryInterface.bulkInsert('Admins', [
       {
-        email: 'admin@admin.com',
+        email: 'admin@gmail.com',
         password: hashedPassword,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -46,7 +46,7 @@ module.exports = {
     await queryInterface.bulkInsert('Orders', [
       {
         clientName: 'Иван Иванов',
-        clientEmail: 'ivan@example.com',
+        clientEmail: 'ivan@gmail.com',
         clientPhone: '+79001234567',
         clockId: 1, // ID часов
         imgId: 1,
@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         clientName: 'Петр Петров',
-        clientEmail: 'petr@example.com',
+        clientEmail: 'petr@gmail.com',
         clientPhone: '+79007654321',
         clockId: 2,
         imgId: 2,
