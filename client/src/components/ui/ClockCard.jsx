@@ -15,30 +15,4 @@ export default function ClockCard({ clock }) {
   );
 }
 
-//     <Carousel>
-//       <Carousel.Item>
-//         <ExampleCarouselImage text={clock.img} />
-//         <Carousel.Caption>
-//           <h3>{clock.title}</h3>
-//           <p>{clock.description}</p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//       <Carousel.Item>
-//         <ExampleCarouselImage text="Second slide" />
-//         <Carousel.Caption>
-//           <h3>Second slide label</h3>
-//           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//       <Carousel.Item>
-//         <ExampleCarouselImage text="Third slide" />
-//         <Carousel.Caption>
-//           <h3>Third slide label</h3>
-//           <p>
-//             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-//           </p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//     </Carousel>
-//   );
-// }
+
