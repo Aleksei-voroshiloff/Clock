@@ -1,18 +1,17 @@
-// import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-// import Carousel from "react-bootstrap/Carousel";
-// import ExampleCarouselImage from "components/ExampleCarouselImage";
-export default function ClockCard({ clock }) {
-  return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={`http://localhost:3000/${clock.img}`} />
-      <Card.Body>
-        <Card.Title>{clock.title}</Card.Title>
-        <Card.Text>{clock.description}</Card.Text>
-      </Card.Body>
-    </Card>
-    // <Button variant="primary">Подробнее</Button>
-  );
-}
+// import React from "react";
+// import { Carousel, Container } from "react-bootstrap";
 
-
+// export default function ClockCard({ clock }) {
+//   return (
+//     <Container>
+//       <Carousel>
+//         <Carousel.Item>
+//           <img
+//             className="d-block w-100"
+//             src={`http://localhost:3000/img/${clock.img}`} // URL изображения
+//           />
+//         </Carousel.Item>
+//       </Carousel>
+//     </Container>
+//   );
+// }
