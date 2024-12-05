@@ -34,7 +34,9 @@ const FeedbackForm = ({ initialData }) => {
     }
   };
   return (
-    <Container style={ {background: 'grey', borderRadius: '10px', marginTop: "50px"}}>
+    <Container
+      style={{ background: 'rgb(102, 88, 72)', borderRadius: '10px', marginTop: '50px',  }}
+    >
       <Formik
         // initialValues={initialValues}
         // validationSchema={validationSchema}
@@ -42,7 +44,7 @@ const FeedbackForm = ({ initialData }) => {
       >
         {({ setFieldValue }) => (
           <Form>
-            <h1 className="text-center mb-4">Форма обратной связи</h1>
+            <h2 className="text-center mb-4">Форма обратной связи</h2>
 
             <BootstrapForm.Group controlId="name">
               <BootstrapForm.Label>Имя</BootstrapForm.Label>
@@ -91,7 +93,11 @@ const FeedbackForm = ({ initialData }) => {
               <ErrorMessage name="sketch" component="div" className="text-danger" />
             </BootstrapForm.Group>
 
-            <Button variant="primary" type="submit" style={{backgroundColor: "black", borderColor: "black"}}>
+            <Button
+              variant="primary"
+              type="submit"
+              style={{ backgroundColor: 'black', borderColor: 'black', marginTop: '15px', marginBottom: '15px', marginLeft: '45%'}}
+            >
               Отправить
             </Button>
           </Form>
