@@ -1,11 +1,12 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Form as BootstrapForm, Button } from "react-bootstrap";
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Form as BootstrapForm, Button, Container } from 'react-bootstrap';
+
 // import validationSchema from "./validationSchema";
 
 const FeedbackForm = ({ initialData }) => {
   console.log(initialData);
-  
+
   // const initialValues = {
   //   name: initialData.clientName || "",
   //   email: initialData.clientEmail || "",
@@ -14,85 +15,89 @@ const FeedbackForm = ({ initialData }) => {
   //   img: "",
   // };
 
-
   const handleSubmit = async (values) => {
     const formData = new FormData();
-    formData.append("name", values.name);
-    formData.append("email", values.email);
-    formData.append("phone", values.phone);
-    formData.append("model", values.model);
-    formData.append("img", values.img);
+    formData.append('name', values.name);
+    formData.append('email', values.email);
+    formData.append('phone', values.phone);
+    formData.append('model', values.model);
+    formData.append('img', values.img);
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
+    const response = await fetch('/api/contact', {
+      method: 'POST',
       body: formData,
     });
 
     if (!response.ok) {
-      alert("Ошибка при отправке формы");
+      alert('Ошибка при отправке формы');
     } else {
     }
-
   };
   return (
-    <Formik
-      // initialValues={initialValues}
-      // validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      {({ setFieldValue }) => (
-        <Form>
-          <BootstrapForm.Group controlId="name">
-            <BootstrapForm.Label>Имя</BootstrapForm.Label>
-            <Field name="name" as={BootstrapForm.Control} type="text" />
-            <ErrorMessage
-              name="name"
-              component="div"
-              style={{ color: "red" }}
-            />
-          </BootstrapForm.Group>
+    <Container style={ {background: 'grey', borderRadius: '10px', marginTop: "50px"}}>
+      <Formik
+        // initialValues={initialValues}
+        // validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {({ setFieldValue }) => (
+          <Form>
+            <h1 className="text-center mb-4">Форма обратной связи</h1>
 
-          <BootstrapForm.Group controlId="email">
-            <BootstrapForm.Label>Email</BootstrapForm.Label>
-            <Field name="email" as={BootstrapForm.Control} type="email" />
-            <ErrorMessage
-              name="email"
-              component="div"
-              style={{ color: "red" }}
-            />
-          </BootstrapForm.Group>
+            <BootstrapForm.Group controlId="name">
+              <BootstrapForm.Label>Имя</BootstrapForm.Label>
+              <Field
+                name="name"
+                as={BootstrapForm.Control}
+                type="text"
+                placeholder="Введите ваше имя"
+              />
+              <ErrorMessage name="name" component="div" className="text-danger" />
+            </BootstrapForm.Group>
 
-          <BootstrapForm.Group controlId="phone">
-            <BootstrapForm.Label>Телефон</BootstrapForm.Label>
-            <Field name="phone" as={BootstrapForm.Control} type="text" />
-            <ErrorMessage
-              name="phone"
-              component="div"
-              style={{ color: "red" }}
-            />
-          </BootstrapForm.Group>
+            <BootstrapForm.Group controlId="email">
+              <BootstrapForm.Label>Email</BootstrapForm.Label>
+              <Field
+                name="email"
+                as={BootstrapForm.Control}
+                type="email"
+                placeholder="Введите ваш email"
+              />
+              <ErrorMessage name="email" component="div" className="text-danger" />
+            </BootstrapForm.Group>
 
-          <BootstrapForm.Group controlId="sketch">
-            <BootstrapForm.Label>Загрузите эскиз</BootstrapForm.Label>
-            <input
-              name="sketch"
-              type="file"
-              accept="image/*"
-              onChange={(event) => {
-                setFieldValue("sketch", event.currentTarget.files[0]);
-              }}
-            />
-            <ErrorMessage
-              name="sketch"
-              component="div"
-              style={{ color: "red" }}
-            />
-          </BootstrapForm.Group>
+            <BootstrapForm.Group controlId="phone">
+              <BootstrapForm.Label>Телефон</BootstrapForm.Label>
+              <Field
+                name="phone"
+                as={BootstrapForm.Control}
+                type="text"
+                placeholder="Введите ваш телефон"
+              />
+              <ErrorMessage name="phone" component="div" className="text-danger" />
+            </BootstrapForm.Group>
 
-          <Button type="submit">Отправить</Button>
-        </Form>
-      )}
-    </Formik>
+            <BootstrapForm.Group controlId="sketch">
+              <BootstrapForm.Label>Загрузите эскиз</BootstrapForm.Label>
+              <input
+                name="sketch"
+                type="file"
+                accept="image/*"
+                onChange={(event) => {
+                  setFieldValue('sketch', event.currentTarget.files[0]);
+                }}
+                className="form-control"
+              />
+              <ErrorMessage name="sketch" component="div" className="text-danger" />
+            </BootstrapForm.Group>
+
+            <Button variant="primary" type="submit" style={{backgroundColor: "black", borderColor: "black"}}>
+              Отправить
+            </Button>
+          </Form>
+        )}
+      </Formik>
+    </Container>
   );
 };
 
