@@ -10,9 +10,14 @@ import LoginForm from './components/ui/LoginForm';
 
 // import RegisterForm from './components/ui/RegisterForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ClockPage from './components/pages/ClockPage';
+// import ClockCard from './components/ui/ClockCard';
+
+
 
 import ClockPage from './components/pages/ClockPage';
 import Contact from './components/ui/Contact';
+
 
 function App() {
   const [user, setUser] = useState({ status: 'logging' });
