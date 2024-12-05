@@ -8,9 +8,17 @@ import Layout from './components/Layout';
 // import axiosInstance, { setAccessToken } from './api/axiosInstance';
 import LoginForm from './components/ui/LoginForm';
 
+<<<<<<< HEAD
 // import RegisterForm from './components/ui/RegisterForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+=======
+
+// import RegisterForm from './components/ui/RegisterForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+>>>>>>> dev
 import ClockPage from './components/pages/ClockPage';
 
 function App() {
