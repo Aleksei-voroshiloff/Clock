@@ -1,17 +1,22 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-// import '../assets/styles/style.css';
+import '../../../public/assets/styles/style.css';
 
 export default function ClockCard({ clock }) {
   return (
-<<<<<<< HEAD
-
-    <Card className="clock-card" style={{ width: '18rem' } }>
-      <Card.Img variant="top" src={clock.img} />
-=======
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={`http://localhost:3000/${clock.img}`} />
->>>>>>> dev
+    <Card
+      style={{
+        width: '18rem',
+        marginBottom: '150px',
+        marginRight: '10px',
+        marginLeft: '10px',
+      }}
+    >
+      <Card.Img
+        variant="top"
+        src={`http://localhost:3000/${clock.img}`}
+        style={{ marginTop: '10px' }}
+      />
       <Card.Body>
         <Card.Title className="text-center">{clock.title}</Card.Title>
         <Card.Text className="text-muted">{clock.description}</Card.Text>

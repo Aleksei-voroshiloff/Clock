@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import ErrorPage from './components/pages/ErrorPage';
@@ -8,18 +8,11 @@ import Layout from './components/Layout';
 // import axiosInstance, { setAccessToken } from './api/axiosInstance';
 import LoginForm from './components/ui/LoginForm';
 
-<<<<<<< HEAD
 // import RegisterForm from './components/ui/RegisterForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-=======
-
-// import RegisterForm from './components/ui/RegisterForm';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-
->>>>>>> dev
 import ClockPage from './components/pages/ClockPage';
+import Contact from './components/ui/Contact';
 
 function App() {
   const [user, setUser] = useState({ status: 'logging' });
@@ -54,7 +47,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout  />,
+      element: <Layout />,
       errorElement: <ErrorPage />,
       children: [
         {
@@ -64,6 +57,10 @@ function App() {
         {
           path: '/clock',
           element: <ClockPage />,
+        },
+        {
+          path: '/contact',
+          element: <Contact />,
         },
         { path: '/signin', element: <LoginForm /> },
         { path: '*', element: <ErrorPage /> },
