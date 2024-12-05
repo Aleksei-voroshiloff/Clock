@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 export default function NavBar() {
 
-  return (
+return (
+
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/">logo</Navbar.Brand>

@@ -43,7 +43,7 @@ export default function History() {
                 международным стандартам качества. Мы гарантируем возврат товара в течение
                 30 дней с момента покупки, если он не соответствует вашим ожиданиям.
               </Card.Text>
-              <Button variant="primary" href="/contact">
+              <Button variant="primary" href="/contact" style={{backgroundColor: "black", borderColor: "black"}}>
                 Связаться с нами
               </Button>
             </Card.Body>
