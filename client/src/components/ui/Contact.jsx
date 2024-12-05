@@ -63,7 +63,7 @@ const Contact = () => {
       </Row>
       <div className="text-center mt-4">
         <Link to="/">
-          <Button variant="secondary" href="/">Вернуться назад</Button>
+          <Button variant="secondary" href="/" style={{backgroundColor: "black", borderColor: "black"}}>Вернуться назад</Button>
         </Link>
       </div>
     </Container>
