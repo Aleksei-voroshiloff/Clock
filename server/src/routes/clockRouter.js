@@ -36,4 +36,7 @@ clockRouter
       res.status(500).json({ message: 'Ошибка сервера' });
     }
   });
+
+  clockRouter
+  .get('/:id')
 module.exports = clockRouter;
