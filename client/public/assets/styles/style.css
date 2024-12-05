@@ -1,7 +1,20 @@
 body {
-  background-color: black;
-
+  background: rgb(24, 18, 2);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 18, 2, 1) 0%,
+    rgba(83, 70, 58, 1) 35%,
+    rgb(153, 134, 116) 100%
+  );
   font-family: 'Merriweather', sans-serif;
+}
+h1 {
+  color: #f4f4f4;
+}
+
+h2 {
+  color: #f4f4f4;
+  padding-top: 30px;
 }
 
 .clock-card {
@@ -9,10 +22,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-}
-
-.clock-card:hover {
-  transform: scale(1.05);
+  font-family: 'Merriweather', sans-serif;
 }
 
 .clock-card img {
@@ -26,5 +36,22 @@ body {
 }
 
 .card-text {
-  font-size: 0.9rem;
+  font-size: 20px;
 }
+
+.navbar {
+  background-color: #2d251f; /* Цвет фона навбара */
+  color: rgb(102, 88, 72); /* Цвет текста */
+  padding: 15px; /* Отступы */
+  display: flex; /* Flexbox для выравнивания */
+  justify-content: space-between; /* Распределение элементов */
+  align-items: center; /* Вертикальное выравнивание */
+}
+
+.navbar a {
+  color: rgb(96, 84, 72); /* Цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  padding: 10px 15px; /* Отступы для ссылок */
+}
+
+

@@ -21,7 +21,7 @@ export default function ClockCard({ clock }) {
         <Card.Title className="text-center">{clock.title}</Card.Title>
         <Card.Text className="text-muted">{clock.description}</Card.Text>
         <div className="d-flex justify-content-between">
-          <Button variant="primary">Подробнее</Button>
+          {/* <Button variant="primary">Подробнее</Button> */}
         </div>
       </Card.Body>
     </Card>
