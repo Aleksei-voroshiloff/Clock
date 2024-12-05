@@ -2,18 +2,26 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-export default function NavBar({ }) {
+//import { NavLink } from "react-router-dom";
+
+export default function NavBar({ logoutHandler, user }) {
+    console.log(user);
+    
   return (
     <Navbar bg="dark" data-bs-theme="dark">
-      <Container>
-        <Navbar.Brand href="/">logo</Navbar.Brand>
+      <Container className="navbar">
+        <Navbar.Brand href="/">
+          {user.status === "logged" ? user.user.email : "Guest"}
+        </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="#home">ссылка на карусель</Nav.Link>
           <Nav.Link href="#features">ссылка на 3д модель</Nav.Link>
           <Nav.Link href="#pricing"> ссылка на на обратную связь</Nav.Link>
-          <button className="nav-link" >
-            Logout
-          </button>
+          {user.status === "logged" && (
+            <>
+              <button className="nav-link" onClick={logoutHandler}>Выйти</button>
+            </>
+          )}
         </Nav>
       </Container>
     </Navbar>
