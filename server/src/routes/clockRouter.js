@@ -17,25 +17,25 @@ clockRouter
       console.log(error);
     }
   })
-  .post(verifyAccessToken, upload.single('file'), async (req, res) => {
-    try {
-      if (!req.file) {
-        return res.status(400).json({ message: 'Нет файла' });
-      }
-      const name = `${Date.now()}.webp`;
-      const outputBuffer = await sharp(req.file.buffer).webp().toBuffer();
-      await fs.writeFile(`./public/img/${name}`, outputBuffer);
+  // .post(verifyAccessToken, upload.single('file'), async (req, res) => {
+  //   try {
+  //     if (!req.file) {
+  //       return res.status(400).json({ message: 'Нет файла' });
+  //     }
+  //     const name = `${Date.now()}.webp`;
+  //     const outputBuffer = await sharp(req.file.buffer).webp().toBuffer();
+  //     await fs.writeFile(`./public/img/${name}`, outputBuffer);
 
-      const { title, description } = req.body;
-      const userId = res.locals.user.id;
+  //     const { title, description } = req.body;
+  //     const userId = res.locals.user.id;
 
-      const newClock = await Clock.create({ title, description, img: name, userId });
-      res.json(newClock);
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: 'Ошибка сервера' });
-    }
-  });
+  //     const newClock = await Clock.create({ title, description, img: name, userId });
+  //     res.json(newClock);
+  //   } catch (error) {
+  //     console.log(error);
+  //     res.status(500).json({ message: 'Ошибка сервера' });
+  //   }
+  // });
 
   clockRouter
   .get('/:id')
