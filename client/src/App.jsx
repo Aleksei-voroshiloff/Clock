@@ -17,6 +17,7 @@ import ClockPage from './components/pages/ClockPage';
 
 // import ClockPage from './components/pages/ClockPage';
 import Contact from './components/ui/Contact';
+import ClockRedax from './components/pages/ClockRedax';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
         },
         { path: '/signin', element: <LoginForm /> },
         { path: '*', element: <ErrorPage /> },
+        { path: '/clock/redax', element: <ClockRedax /> },
       ],
     },
   ]);

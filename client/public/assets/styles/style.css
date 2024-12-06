@@ -42,42 +42,17 @@ h2 {
 .carousel {
   max-width: 81pc; /* Максимальная ширина карусели */
   margin: 0 auto; /* Центрирование карусели */
+  overflow: hidden; /* Скрыть переполнение */
+  border-radius: 50px;
 }
 
 .carousel img {
-  margin-top: 50px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   height: auto; /* Автоматическая высота для сохранения пропорций */
   max-height: 85vh; /* Максимальная высота изображения */
   object-fit: cover; /* Обеспечивает правильное отображение изображения */
 }
 
-button {
-  color: #1d9af2;
-  background-color: #292d3e;
-  border: 1px solid #1d9af2;
-  /* border-radius: 4px; */
-  /* padding: 0 15px; */
-  cursor: pointer;
-  height: 32px;
-  font-size: 14px;
-  transition: all 1.5s ease-in-out;
-}
-button:hover {
-  transform: scale(0.9);
-}
 
-/* styles.css */
-@keyframes popIn {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 
-  .pop-in {
-    animation: popIn 0.5s ease forwards; /* Анимация всплытия */
-  }
-}
