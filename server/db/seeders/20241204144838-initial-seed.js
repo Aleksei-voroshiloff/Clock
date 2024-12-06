@@ -30,6 +30,27 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        title: 'Часы TAG Heuer Carrera',
+        description: 'Спортивный дизайн для автолюбителей.',
+        img: 'Снимок4.webp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: 'Часы Seiko Prospex',
+        description: 'Надежные дайверские часы с японским качеством.',
+        img: 'Снимок5.webp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: 'Часы Breitling Avenger',
+        description: 'Часы для пилотов с высокой точностью и прочностью.',
+        img: 'Снимок6.webp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
 
     // Сиды для таблицы Admin
@@ -66,8 +87,8 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Orders',  {});
-    await queryInterface.bulkDelete('Admins',  {});
-    await queryInterface.bulkDelete('Clocks',  {});
+    await queryInterface.bulkDelete('Orders', {});
+    await queryInterface.bulkDelete('Admins', {});
+    await queryInterface.bulkDelete('Clocks', {});
   },
 };
