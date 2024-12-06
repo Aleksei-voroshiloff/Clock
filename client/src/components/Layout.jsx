@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 import NavBar from "./ui/NavBar";
 import FeedbackForm from "./ui/FeedbackForm";
 import History from "./ui/History";
+import { Clock3d } from './ui/Clock3d';
 
 function Layout() {
   return (
@@ -15,6 +16,7 @@ function Layout() {
         <NavBar />
         <History/>
         <Outlet />
+        {/* <Clock3d /> */}
         <FeedbackForm />
         <h1
           style={{

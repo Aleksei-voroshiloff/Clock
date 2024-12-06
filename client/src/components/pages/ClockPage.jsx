@@ -12,7 +12,7 @@ export default function ClockPage() {
   }, []);
 
   return (
-    <div className="carousel">
+    <div id="corusel" className="carousel">
       <Carousel>
         {clocks.map((clock) => (
           <Carousel.Item key={clock.id}>

@@ -7,6 +7,7 @@ body {
     rgb(153, 134, 116) 100%
   );
   font-family: "Merriweather", sans-serif;
+  
 }
 h1 {
   color: #f4f4f4;
@@ -80,4 +81,18 @@ button:hover {
   .pop-in {
     animation: popIn 0.5s ease forwards; /* Анимация всплытия */
   }
+}
+.sticky {
+  background-color: #ffffff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+Navbar {
+  background-color: #ffffff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
 }

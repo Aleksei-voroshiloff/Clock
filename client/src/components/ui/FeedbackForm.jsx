@@ -44,7 +44,7 @@ const FeedbackForm = ({ initialData }) => {
       >
         {({ setFieldValue }) => (
           <Form>
-            <h2 className="text-center mb-4">Форма обратной связи</h2>
+            <h2 id='feedback' className="text-center mb-4">Форма обратной связи</h2>
 
             <BootstrapForm.Group controlId="name">
               <BootstrapForm.Label>Имя</BootstrapForm.Label>
