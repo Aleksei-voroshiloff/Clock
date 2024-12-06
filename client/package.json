@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^9.120.0",
     "@react-three/fiber": "^8.17.10",
+    "@react-three/gltfjsx": "^4.3.4",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "carousel": "^0.0.3",
@@ -25,11 +26,14 @@
     "nodemon": "^3.1.7",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.6",
+    "react-cookie-consent": "^9.0.0",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.2",
+    "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^7.0.2",
     "scrollmagic": "^2.0.8",
     "three": "^0.171.0"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

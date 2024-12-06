@@ -1,4 +1,5 @@
 body {
+
   background: rgb(24, 18, 2);
   background: linear-gradient(
     90deg,
@@ -8,14 +9,28 @@ body {
   );
   font-family: "Merriweather", sans-serif;
   
+
+  background-image: url('../../img/grungeblackconcretetexturedbackground.jpg');
+  font-family: 'IBM Plex Serif';
+
 }
+
 h1 {
-  color: #f4f4f4;
+  color: #bbb9b9;
+  border-color: #4e3b31;
+  font-size: 60px;
+  padding-bottom: 40px;
+  cursor: pointer;
+  text-shadow: 4px 3px 0 rgba(24, 18, 2, 1);
 }
 
 h2 {
-  color: #f4f4f4;
+  color: #bbb9b9;
+  border-color: #4e3b31;
   padding-top: 30px;
+  font-size: 50px;
+  cursor: pointer;
+  text-shadow: 4px 3px 0 rgba(24, 18, 2, 1);
 }
 
 .clock-card {
@@ -23,7 +38,7 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  font-family: "Merriweather", sans-serif;
+  font-family: 'Merriweather', sans-serif;
 }
 
 .clock-card img {
@@ -43,32 +58,22 @@ h2 {
 .carousel {
   max-width: 81pc; /* Максимальная ширина карусели */
   margin: 0 auto; /* Центрирование карусели */
+  overflow: hidden; /* Скрыть переполнение */
+  border-radius: 50px;
 }
 
 .carousel img {
-  margin-top: 50px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   height: auto; /* Автоматическая высота для сохранения пропорций */
   max-height: 85vh; /* Максимальная высота изображения */
   object-fit: cover; /* Обеспечивает правильное отображение изображения */
 }
 
-button {
-  color: #1d9af2;
-  background-color: #292d3e;
-  border: 1px solid #1d9af2;
-  /* border-radius: 4px; */
-  /* padding: 0 15px; */
-  cursor: pointer;
-  height: 32px;
-  font-size: 14px;
-  transition: all 1.5s ease-in-out;
-}
-button:hover {
-  transform: scale(0.9);
-}
+
 
 /* styles.css */
-@keyframes popIn {
+/* @keyframes popIn {
   0% {
     transform: translateY(20px);
     opacity: 0;
@@ -80,19 +85,14 @@ button:hover {
 
   .pop-in {
     animation: popIn 0.5s ease forwards; /* Анимация всплытия */
-  }
-}
-.sticky {
-  background-color: #ffffff;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+/* } */
+/* } */
+*/ .navbar {
+  background-color: #4e3b31; /* Цвет фона навбара */
+  color: white; /* Цвет текста */
+  padding: 15px; /* Отступы */
+  display: flex; /* Flexbox для выравнивания */
+  justify-content: space-between; /* Распределение элементов */
+  align-items: center; /* Вертикальное выравнивание */
 }
 
-Navbar {
-  background-color: #ffffff;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-
-}
