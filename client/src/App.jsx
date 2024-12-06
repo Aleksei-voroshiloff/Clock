@@ -18,7 +18,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import ClockCard from './components/ui/ClockCard';
 // import "../../assets/styles/style.css";
 
-// import ClockPage from './components/pages/ClockPage';
 import Contact from "./components/ui/Contact";
 
 import ClockPage from "./components/pages/ClockPage";

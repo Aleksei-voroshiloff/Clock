@@ -47,7 +47,7 @@ const FeedbackForm = () => {
             <h2 className="text-center mb-4">Форма для заказов</h2>
 
             <BootstrapForm.Group controlId="name">
-              <BootstrapForm.Label>Имя</BootstrapForm.Label>
+              <BootstrapForm.Label style={{fontSize: "25px"}}>Имя</BootstrapForm.Label>
               <Field
                 name="name"
                 as={BootstrapForm.Control}
@@ -59,7 +59,7 @@ const FeedbackForm = () => {
             </BootstrapForm.Group>
 
             <BootstrapForm.Group controlId="email">
-              <BootstrapForm.Label>Email</BootstrapForm.Label>
+              <BootstrapForm.Label style={{fontSize: "25px"}}>Email</BootstrapForm.Label>
               <Field
                 name="email"
                 as={BootstrapForm.Control}
@@ -71,7 +71,7 @@ const FeedbackForm = () => {
             </BootstrapForm.Group>
 
             <BootstrapForm.Group controlId="phone">
-              <BootstrapForm.Label>Телефон</BootstrapForm.Label>
+              <BootstrapForm.Label style={{fontSize: "25px"}}>Телефон</BootstrapForm.Label>
               <Field
                 name="phone"
                 as={BootstrapForm.Control}
@@ -83,7 +83,7 @@ const FeedbackForm = () => {
             </BootstrapForm.Group>
 
             <BootstrapForm.Group controlId="sketch">
-              <BootstrapForm.Label>Загрузите эскиз</BootstrapForm.Label>
+              <BootstrapForm.Label style={{fontSize: "25px"}}>Загрузите эскиз</BootstrapForm.Label>
               <input
                 name="sketch"
                 type="file"
