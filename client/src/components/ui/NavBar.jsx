@@ -2,21 +2,29 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import '../../../public/assets/styles/style.css'; // Импортируем стили
-export default function NavBar() {
+//import { NavLink } from "react-router-dom";
 
+import '../../../public/assets/styles/style.css'; // Импортируем стили
+
+
+
+export default function NavBar({ logoutHandler, user }) { 
+    console.log(user);
+    
   return (
-    <Navbar className="fixed-top" bg="dark" data-bs-theme="dark">
-      <Container>
+    <Navbar className="fixed-top" bg="dark" data-bs-theme="dark"
+      <Container className="navbar">
         <Navbar.Brand href="/">logo</Navbar.Brand>
-        <Nav className="me-auto">
-        <Nav.Link href="#history">История</Nav.Link>
-          <Nav.Link href="#corusel">Карусель</Nav.Link>
-          <Nav.Link href="#3dmodel">3д модель</Nav.Link>
-          <Nav.Link href="#feedback">форма для заказов</Nav.Link>
+     <Nav className="me-auto">
+          {user.status === "logged" ? user.user.email : "🕰️"}
+        </Navbar.Brand>
+          {user.status === "logged" && (
+            <>
+              <button className="nav-link" onClick={logoutHandler}>Выйти</button>
+            </>
+          )}
         </Nav>
       </Container>
     </Navbar>
   );
-
 }
