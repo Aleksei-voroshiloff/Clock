@@ -1,5 +1,5 @@
 import CookieConsent from "react-cookie-consent";
-
+import React from "react";
 export default function Cookie() {
   return (
     <CookieConsent

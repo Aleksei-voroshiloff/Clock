@@ -8,7 +8,7 @@ import "../../../public/assets/styles/carusel.css";
 import { Link } from "react-router-dom";
 import History from "../ui/History";
 import FeedbackForm from "../ui/FeedbackForm";
-import Contact from "../ui/Contact";
+// import Contact from "../ui/Contact";
 
 export default function ClockPage() {
   const [clocks, setClocks] = useState([]);

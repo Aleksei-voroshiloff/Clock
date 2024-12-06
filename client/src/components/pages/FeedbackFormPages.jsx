@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-
+import React from "react";
 const MyForm = Yup.object({
   name: Yup.string()
     .required('Имя обязательно')

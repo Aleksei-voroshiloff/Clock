@@ -1,5 +1,5 @@
 import { Triangle } from "react-loader-spinner";
-
+import React from "react";
 export default function Loader({ children, isLoading, className }) {
   return isLoading ? (
     <div className={className}>
