@@ -24,9 +24,9 @@ function Layout({ logoutHandler, user }) {
 
         <Loader className="loader" isLoading={user?.status === 'logging'}>
           <NavBar logoutHandler={logoutHandler} user={user} />
-          <History />
+          {/* <History /> */}
           <Outlet />
-          <FeedbackForm />
+          {/* <FeedbackForm /> */}
           <h1
             style={{
               textAlign: 'center',
