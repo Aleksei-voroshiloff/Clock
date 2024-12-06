@@ -1,20 +1,47 @@
 body {
-  background: rgb(24, 18, 2);
+
+  /* background: rgb(24, 18, 2);
   background: linear-gradient(
     90deg,
     rgba(24, 18, 2, 1) 0%,
     rgba(83, 70, 58, 1) 35%,
     rgb(153, 134, 116) 100%
-  );
+  ); */
   font-family: "Merriweather", sans-serif;
+  
+
+  background-image: url('../../img/grungeblackconcretetexturedbackground.jpg');
+  font-family: 'IBM Plex Serif';
+
 }
+
+#history{
+  color: #bbb9b9;
+  text-shadow: 2px 4px 0 rgb(0, 0, 0);
+  padding-top: 5%;
+}
+
+#feedback{
+  color: #bbb9b9;
+  text-shadow: 2px 4px 0 rgb(0, 0, 0);
+}
+
 h1 {
-  color: #f4f4f4;
+  color: #bbb9b9;
+  border-color: #d85d1a;
+  font-size: 60px;
+  padding-bottom: 40px;
+  cursor: pointer;
+  text-shadow: 4px 3px 0 rgba(24, 18, 2, 1);
 }
 
 h2 {
-  color: #f4f4f4;
+  color: #bbb9b9;
+  border-color: #4e3b31;
   padding-top: 30px;
+  font-size: 50px;
+  cursor: pointer;
+  text-shadow: 4px 3px 0 rgba(24, 18, 2, 1);
 }
 
 .clock-card {
@@ -22,7 +49,7 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  font-family: "Merriweather", sans-serif;
+  font-family: 'Merriweather', sans-serif;
 }
 
 .clock-card img {
@@ -55,4 +82,28 @@ h2 {
 }
 
 
+
+/* styles.css */
+/* @keyframes popIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .pop-in {
+    animation: popIn 0.5s ease forwards; /* Анимация всплытия */
+/* } */
+/* } */
+*/ .navbar {
+  background-color: #4e3b31; /* Цвет фона навбара */
+  color: white; /* Цвет текста */
+  padding: 15px; /* Отступы */
+  display: flex; /* Flexbox для выравнивания */
+  justify-content: space-between; /* Распределение элементов */
+  align-items: center; /* Вертикальное выравнивание */
+}
 

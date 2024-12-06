@@ -12,21 +12,42 @@ module.exports = {
       {
         title: 'Часы Omega Seamaster',
         description: 'Элегантные водонепроницаемые часы.',
-        img: 'Снимок1.webp',
+        img: '/img/Снимок1.webp',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         title: 'Часы Rolex Submariner',
         description: 'Классические часы для дайвинга.',
-        img: 'Снимок2.webp',
+        img: '/img/Снимок2.webp',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         title: 'Часы Casio G-Shock',
         description: 'Ударопрочные часы для активного отдыха.',
-        img: 'Снимок3.webp',
+        img: '/img/Снимок3.webp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: 'Часы TAG Heuer Carrera',
+        description: 'Спортивный дизайн для автолюбителей.',
+        img: '/img/Снимок4.webp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: 'Часы Seiko Prospex',
+        description: 'Надежные дайверские часы с японским качеством.',
+        img: '/img/Снимок5.webp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: 'Часы Breitling Avenger',
+        description: 'Часы для пилотов с высокой точностью и прочностью.',
+        img: '/img/Снимок6.webp',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -66,8 +87,8 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Orders',  {});
-    await queryInterface.bulkDelete('Admins',  {});
-    await queryInterface.bulkDelete('Clocks',  {});
+    await queryInterface.bulkDelete('Orders', {});
+    await queryInterface.bulkDelete('Admins', {});
+    await queryInterface.bulkDelete('Clocks', {});
   },
 };

@@ -1,0 +1,9 @@
+.text-hover {
+  transition: transform 0.3s ease;
+}
+
+.text-hover:hover {
+  transform: scale(1.05);
+}
+
+
