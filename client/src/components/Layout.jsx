@@ -6,11 +6,12 @@ import { Container } from 'react-bootstrap';
 import NavBar from './ui/NavBar';
 import FeedbackForm from './ui/FeedbackForm';
 import History from './ui/History';
+import '../../public/assets/styles/style.css'; // Импортируем стили"
 
 function Layout() {
   return (
     <>
-      <div>
+      <div >
         <NavBar />
         <History />
         <Outlet />
