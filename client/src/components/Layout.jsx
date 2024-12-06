@@ -1,17 +1,29 @@
 // import React from "react";
 import { Outlet } from 'react-router-dom';
 // import Header from "./ui/Header";
-import { Container } from 'react-bootstrap';
-import NavBar from './ui/NavBar';
+
+
 import Loader from '../HOCs/Loader';
 import Cookie from './ui/Cookie';
 import FeedbackForm from './ui/FeedbackForm';
-import History from './ui/History';
+
+
+
+import { Container } from "react-bootstrap";
+import NavBar from "./ui/NavBar";
+import FeedbackForm from "./ui/FeedbackForm";
+import History from "./ui/History";
+import { Clock3d } from './ui/Clock3d';
+
+import '../../public/assets/styles/style.css'; // Импортируем стили"
+
+
 
 function Layout({ logoutHandler, user }) {
   return (
     <>
       <Container>
+
         <Loader className="loader" isLoading={user?.status === 'logging'}>
           <NavBar logoutHandler={logoutHandler} user={user} />
           <History />
@@ -24,6 +36,7 @@ function Layout({ logoutHandler, user }) {
           ></h1>
           <Cookie />
         </Loader>
+        {/* <Clock3d /> */}
       </Container>
     </>
   );

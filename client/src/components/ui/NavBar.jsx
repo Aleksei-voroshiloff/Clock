@@ -4,21 +4,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 //import { NavLink } from "react-router-dom";
 
+import '../../../public/assets/styles/style.css'; // Импортируем стили
+
+
+
 export default function NavBar({ logoutHandler, user }) { 
     console.log(user);
     
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar className="fixed-top" bg="dark" data-bs-theme="dark"
       <Container className="navbar">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/">logo</Navbar.Brand>
+     <Nav className="me-auto">
           {user.status === "logged" ? user.user.email : "🕰️"}
         </Navbar.Brand>
-
-        <Nav className="me-auto">
-          <Nav.Link href="#home">ссылка на карусель</Nav.Link>
-          <Nav.Link href="#features">ссылка на 3д модель</Nav.Link>
-          <Nav.Link href="#pricing"> ссылка на на обратную связь</Nav.Link>
-
           {user.status === "logged" && (
             <>
               <button className="nav-link" onClick={logoutHandler}>Выйти</button>
@@ -29,22 +28,3 @@ export default function NavBar({ logoutHandler, user }) {
     </Navbar>
   );
 }
-
-//     <Navbar bg="light" data-bs-theme="light">
-//       <Container className="navbar">
-//         <Navbar.Brand>logo</Navbar.Brand>
-//         <Nav className="me-auto">
-//           <NavLink className="nav-link" to={"/"}>
-//             ссылка на карусель
-//           </NavLink>
-//           <NavLink className="nav-link" to={"/"}>
-//             ссылка на 3д модель
-//           </NavLink>
-//           <NavLink className="nav-link" to={"/"}>
-//             ссылка на на обратную связь
-//           </NavLink>
-//         </Nav>
-//       </Container>
-//     </Navbar>
-//   );
-// }
