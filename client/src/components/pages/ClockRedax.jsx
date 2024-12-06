@@ -1,58 +1,60 @@
 import axios from "axios";
-import { useEffect, useState, useParams, Link } from "react";
-import { Button, Card } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import ClockEditForm from "../ui/ClockEditForm";
 
-export default function ClockRedax() {
-  const [clock, setClock] = useState({ title: "", desc: "", url: "" });
+export default function ClockRedax({ id }) { // Принимаем id как пропс
+  const [info, setInfo] = useState({ title: "", desc: "", img: "" });
   const [show, setShow] = useState(false);
 
-  const { id } = useParams();
-
   useEffect(() => {
-    axios(`/api/clocks/${id}`).then((data) => setClock(data));
-  }, []);
+    const fetchClock = async () => {
+      try {
+        const response = await axios(`/api/clocks/${id}`);
+        setInfo(response.data); // Убедитесь, что данные приходят в response.data
+      } catch (error) {
+        console.error("Ошибка при получении данных:", error);
+      }
+    };
+
+    fetchClock();
+  }, [id]); // Добавьте id в зависимости
 
   const updateHandler = async (event) => {
     event.preventDefault();
     try {
       const dataForApi = Object.fromEntries(new FormData(event.target));
-      const res = await axios.put(`/api/clocks/${id}`, dataForApi);
-      setClock(res.data);
+      const res = await axios.put(`/api/clocks/${id}`, {...dataForApi});
+      setInfo(res.data);
       setShow(false);
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <>
-    <div className="card mb-3" style="max-width: 540px;">
-  <div className="row g-0">
-    <div className="col-md-4">
-      <img src="..." className="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div className="col-md-8">
-      <div className="card-body">
-        <h5 className="card-title">{clock.title}</h5>
-        <p className="card-text">{clock.desc}</p>
+      <div className="card mb-3" style={{ maxWidth: '540px', background: 'linear-gradient(90deg, rgba(24, 18, 2, 1) 0%, rgba(83, 70, 58, 1) 35%, rgb(153, 134, 116) 100%)' }}>
+        <div className="row g-0">
+          <div className="col-md-4">
+            <img src={`http://localhost:3000/clock/${info.img}`} className="img-fluid rounded-start" alt="foto" />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title">{info.title}</h5>
+              <p className="card-text">{info.desc}</p>
+              <Link to={'/clock'}>
+                <Button variant="primary">Назад</Button>
+              </Link>
+              <Button variant="primary" onClick={() => setShow((prev) => !prev)}>
+                {show ? "Оставить" : "Изменить"}
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={clock.url} />
-        <Card.Body>
-          <Card.Title>{clock.title}</Card.Title>
-          <Card.Text>{clock.desc}</Card.Text>
-          <Link to={"/toys"}>
-            <Button variant="primary">Back</Button>
-          </Link>
-          <Button variant="primary" onClick={() => setShow((prev) => !prev)}>
-            {show ? "Close" : "Edit"}
-          </Button>
-        </Card.Body>
-      </Card>
-      {show && <ClockEditForm updateHandler={updateHandler} clock={clock} />}
+      {show && <ClockEditForm updateHandler={updateHandler} clock={info} />}
     </>
   );
 }

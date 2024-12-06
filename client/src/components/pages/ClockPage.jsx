@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 export default function ClockPage() {
   const [clocks, setClocks] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  // const [openEdit, setOpenEdit] = useState(false);
   const [carouselInterval, setCarouselInterval] = useState(3000);
   
 
@@ -55,7 +56,7 @@ export default function ClockPage() {
                         <div className="desc">{clock.description}</div>
                         <div >
                           <Link to={"/clock/redax"} >
-                          <Button style={{ paddingBottom: '30px', margin: "10px"}} variant="warning"> Изменить
+                          <Button style={{ paddingBottom: '30px', margin: "10px"}} variant="warning" > Изменить
                           </Button>
                           </Link>
                         <Button style={{ paddingBottom: '30px', margin: "10px"}} variant="dark" onClick={togglePopup}>Назад</Button>
