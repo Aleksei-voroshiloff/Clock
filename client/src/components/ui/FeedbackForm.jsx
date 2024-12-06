@@ -2,46 +2,42 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Form as BootstrapForm, Button, Container } from 'react-bootstrap';
 
-// import validationSchema from "./validationSchema";
-
-const FeedbackForm = ({ initialData }) => {
-  console.log(initialData);
-
-  // const initialValues = {
-  //   name: initialData.clientName || "",
-  //   email: initialData.clientEmail || "",
-  //   phone: initialData.clientPhone || "",
-  //   model: "",
-  //   img: "",
-  // };
+const FeedbackForm = () => {
+  const initialValues = {
+    name: '',
+    email: '',
+    phone: '',
+    img: null,
+  };
 
   const handleSubmit = async (values) => {
     const formData = new FormData();
     formData.append('name', values.name);
     formData.append('email', values.email);
     formData.append('phone', values.phone);
-    formData.append('model', values.model);
-    formData.append('img', values.img);
+    formData.append('img', values.img); // Добавлено для загрузки файла
 
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      body: formData,
-    });
+    try {
+      const response = await fetch('/order', {
+        method: 'POST',
+        body: formData,
+      });
 
-    if (!response.ok) {
-      alert('Ошибка при отправке формы');
-    } else {
+      if (!response.ok) {
+        throw new Error('Ошибка при отправке формы');
+      }
+
+      alert('Форма успешно отправлена');
+    } catch (error) {
+      alert(error.message);
     }
   };
+
   return (
     <Container
-      style={{ background: 'rgb(102, 88, 72)', borderRadius: '10px', marginTop: '50px',  }}
+      style={{ background: 'rgb(102, 88, 72)', borderRadius: '10px', marginTop: '50px' }}
     >
-      <Formik
-        // initialValues={initialValues}
-        // validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
+      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         {({ setFieldValue }) => (
           <Form>
             <h2 className="text-center mb-4">Форма обратной связи</h2>
@@ -53,6 +49,7 @@ const FeedbackForm = ({ initialData }) => {
                 as={BootstrapForm.Control}
                 type="text"
                 placeholder="Введите ваше имя"
+                required
               />
               <ErrorMessage name="name" component="div" className="text-danger" />
             </BootstrapForm.Group>
@@ -64,6 +61,7 @@ const FeedbackForm = ({ initialData }) => {
                 as={BootstrapForm.Control}
                 type="email"
                 placeholder="Введите ваш email"
+                required
               />
               <ErrorMessage name="email" component="div" className="text-danger" />
             </BootstrapForm.Group>
@@ -75,6 +73,7 @@ const FeedbackForm = ({ initialData }) => {
                 as={BootstrapForm.Control}
                 type="text"
                 placeholder="Введите ваш телефон"
+                required
               />
               <ErrorMessage name="phone" component="div" className="text-danger" />
             </BootstrapForm.Group>
@@ -95,8 +94,15 @@ const FeedbackForm = ({ initialData }) => {
 
             <Button
               variant="primary"
+              href='/order'
               type="submit"
-              style={{ backgroundColor: 'black', borderColor: 'black', marginTop: '15px', marginBottom: '15px', marginLeft: '45%'}}
+              style={{
+                backgroundColor: 'black',
+                borderColor: 'black',
+                marginTop: '15px',
+                marginBottom: '15px',
+                marginLeft: '45%',
+              }}
             >
               Отправить
             </Button>

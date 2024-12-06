@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 import NavBar from "./ui/NavBar";
 import FeedbackForm from "./ui/FeedbackForm";
+import History from './ui/History';
 
 
 function Layout() {
@@ -13,6 +14,7 @@ function Layout() {
 
       <div>
         <NavBar />
+        <History/>
         <Outlet />
         <FeedbackForm />
         <h1
@@ -20,8 +22,7 @@ function Layout() {
             textAlign: "center",
           }}
         >
-          {" "}
-          feedback
+         
         </h1>
       </div>
 
