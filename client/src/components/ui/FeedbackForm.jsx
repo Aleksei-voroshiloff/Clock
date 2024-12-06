@@ -96,6 +96,7 @@ const FeedbackForm = () => {
               variant="primary"
               href='/order'
               type="submit"
+
               style={{
                 backgroundColor: 'black',
                 borderColor: 'black',
@@ -103,6 +104,9 @@ const FeedbackForm = () => {
                 marginBottom: '15px',
                 marginLeft: '45%',
               }}
+
+              style={{ textAlign: 'center', backgroundColor: 'black', borderColor: 'black', marginTop: '15px', marginBottom: '15px', marginLeft: '45%'}}
+
             >
               Отправить
             </Button>
