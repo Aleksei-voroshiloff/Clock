@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Navigate,
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import EditEntryPage from "./components/pages/EditEntryPage";
+
 import ErrorPage from "./components/pages/ErrorPage";
-import MainPage from "./components/pages/MainPage";
-import NewEntryPage from "./components/pages/NewEntryPage";
-import OneEntryPage from "./components/pages/OneEntryPage";
+// import MainPage from './components/pages/MainPage';
+//import axios from "axios";
 import Layout from "./components/Layout";
-import axiosInstance, { setAccessToken } from "./api/axiosInstance";
+// import axiosInstance, { setAccessToken } from './api/axiosInstance';
 import LoginForm from "./components/ui/LoginForm";
-import RegisterForm from "./components/ui/";
-import AdminLoginForm from "./components/ui/AdminLoginForm";
+
+// import RegisterForm from './components/ui/RegisterForm';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import ClockPage from "./components/pages/ClockPage";
+import ProtectedRouter from "./HOCs/ProtectedRouter";
+import axiosInstance, { setAccessToken } from "./api/axiosInstance";
 
 function App() {
   const [user, setUser] = useState({ status: "logging" });
@@ -24,11 +28,12 @@ function App() {
         setTimeout(() => {
           setUser({ status: "logged", user: data.user });
         }, 1000);
-        setAccessToken(data.accessToken);
+        // setAccessToken(data.accessToken);
       })
       .catch(() => {
         setUser({ status: "guest", user: null });
-        setAccessToken("");
+
+        // setAccessToken('');
       });
   }, []);
 
@@ -57,17 +62,24 @@ function App() {
         },
         {
           path: "/clock",
-          element: <MainPage />,
+          element: <ClockPage />,
         },
-        { path: "/signin", element: <LoginForm loginHandler={loginHandler} /> },
-        { path: "*", element: <ErrorPage /> },
         {
           path: "/admin",
-          element: <AdminLoginForm loginHandler={loginHandler} />,
+          element: (
+            <ProtectedRouter
+              isAllowed={user.status === "guest"}
+              redirectTo={"/clock"}
+            >
+              <LoginForm user={user} loginHandler={loginHandler} />
+            </ProtectedRouter>
+          ),
         },
+        { path: "*", element: <ErrorPage /> },
       ],
     },
   ]);
+  if (user.status === "logging") return <h5>Загрузка...</h5>;
   return <RouterProvider router={router} />;
 }
 

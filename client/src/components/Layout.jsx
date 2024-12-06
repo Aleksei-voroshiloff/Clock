@@ -1,16 +1,21 @@
-import React from "react";
+// import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./ui/Header";
+// import Header from "./ui/Header";
+import { Container } from "react-bootstrap";
+import NavBar from "./ui/NavBar";
+import Loader from "../HOCs/Loader";
+import Cookie from "./ui/Cookie";
 
-function Layout({ user }) {
+function Layout({ logoutHandler, user }) {
   return (
     <>
-      <Header user={user} />
-      <div className="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
-        <div className="max-w-700 center">
+      <Container>
+        <Loader className="loader" isLoading={user?.status === "logging"}>
+          <NavBar logoutHandler={logoutHandler} user={user} />
           <Outlet />
-        </div>
-      </div>
+          <Cookie />
+        </Loader>
+      </Container>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm({ loginHandler }) {
   const {
@@ -26,13 +27,13 @@ function LoginForm({ loginHandler }) {
       <Row className="justify-content-center">
         <Col md={6}>
           <div className="p-4 border rounded bg-light">
-            <h1 className="text-center mb-4">Вход в систему</h1>
+            <h1 className="text-center mb-4">Авторизация</h1>
             <Form onSubmit={handleSubmit(onSubmit)} noValidate>
               <Controller
                 name="email"
                 control={control}
                 rules={{
-                  required: "Email обязателен",
+                  required: "Укажите email",
                   pattern: {
                     value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$/gm,
                     message: "Некорректный email",
@@ -58,7 +59,7 @@ function LoginForm({ loginHandler }) {
                 name="password"
                 control={control}
                 rules={{
-                  required: "Пароль обязателен",
+                  required: "Укажите пароль",
                 }}
                 render={({ field }) => (
                   <Form.Group className="mb-3">
