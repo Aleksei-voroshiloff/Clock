@@ -2,30 +2,25 @@
 import { Outlet } from 'react-router-dom';
 // import Header from "./ui/Header";
 
-import { Container } from "react-bootstrap";
-import NavBar from "./ui/NavBar";
-import FeedbackForm from "./ui/FeedbackForm";
+import { Container } from 'react-bootstrap';
+import NavBar from './ui/NavBar';
+import FeedbackForm from './ui/FeedbackForm';
 import History from './ui/History';
-
 
 function Layout() {
   return (
     <>
-
       <div>
         <NavBar />
-        <History/>
+        <History />
         <Outlet />
         <FeedbackForm />
         <h1
           style={{
-            textAlign: "center",
+            textAlign: 'center',
           }}
-        >
-         
-        </h1>
+        ></h1>
       </div>
-
     </>
   );
 }

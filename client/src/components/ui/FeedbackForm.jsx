@@ -94,9 +94,10 @@ const FeedbackForm = () => {
 
             <Button
               variant="primary"
-              href='/order'
+              href="/order"
               type="submit"
               style={{
+                textAlign: 'center',
                 backgroundColor: 'black',
                 borderColor: 'black',
                 marginTop: '15px',
