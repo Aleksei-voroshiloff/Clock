@@ -13,7 +13,16 @@ orderRouter.get('/', async (req, res) => {
     console.log(error);
   }
 })
-
+// .post(async (req, res) => {
+//   try {
+//     const { clientName, clientEmail, clientPhone, imgId } = req.body;
+//     const newToy = await Order.create({ clientName, clientEmail, clientPhone, imgId });
+//     res.json(newToy);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ message: 'Ошибка сервера' });
+//   }
+// });
 
 
 module.exports = orderRouter;
