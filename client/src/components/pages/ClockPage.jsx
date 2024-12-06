@@ -38,7 +38,7 @@ export default function ClockPage() {
             <Carousel.Item key={clock.id}>
               <img
                 className="d-block w-100 img-fluid"
-                src={`http://localhost:3000/${clock.img}`}
+                src={`https://localhost:3000/${clock.img}`}
                 alt={clock.description}
               />
               <Carousel.Caption style={{ textAlign: "right" }}>
@@ -56,7 +56,7 @@ export default function ClockPage() {
                       <div className="popup-content">
                         <img
                           className="photoClock"
-                          src={`http://localhost:3000/${clock.img}`}
+                          src={`https://localhost:3000/${clock.img}`}
                           alt="часы"
                         />
                         <div className="infoClock">
