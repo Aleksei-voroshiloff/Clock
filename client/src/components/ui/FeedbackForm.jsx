@@ -35,12 +35,16 @@ const FeedbackForm = () => {
 
   return (
     <Container
-      style={{ background: 'rgb(102, 88, 72)', borderRadius: '10px', marginTop: '50px' }}
+      style={{
+        background: '#787777',
+        marginTop: '50px',
+        boxShadow: '5px 5px 20px rgba(0, 0, 0, 10)',
+      }}
     >
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         {({ setFieldValue }) => (
           <Form>
-            <h2 className="text-center mb-4">Форма обратной связи</h2>
+            <h2 className="text-center mb-4">Форма для заказов</h2>
 
             <BootstrapForm.Group controlId="name">
               <BootstrapForm.Label>Имя</BootstrapForm.Label>
@@ -94,19 +98,16 @@ const FeedbackForm = () => {
 
             <Button
               variant="primary"
-              href='/order'
+              href="/order"
               type="submit"
-
               style={{
+                textAlign: 'center',
                 backgroundColor: 'black',
                 borderColor: 'black',
                 marginTop: '15px',
                 marginBottom: '15px',
                 marginLeft: '45%',
               }}
-
-              style={{ textAlign: 'center', backgroundColor: 'black', borderColor: 'black', marginTop: '15px', marginBottom: '15px', marginLeft: '45%'}}
-
             >
               Отправить
             </Button>
