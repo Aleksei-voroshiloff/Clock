@@ -1,9 +1,8 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 
-function LoginForm({ loginHandler }) {
+function AdminLoginForm({ loginHandler }) {
   const {
     handleSubmit,
     control,
@@ -25,15 +24,15 @@ function LoginForm({ loginHandler }) {
   return (
     <Container className="mt-4">
       <Row className="justify-content-center">
-        <Col md={6}>
+        <Col md={8}>
           <div className="p-4 border rounded bg-light">
             <h1 className="text-center mb-4">Авторизация</h1>
             <Form onSubmit={handleSubmit(onSubmit)} noValidate>
               <Controller
-                name="email"
+                name="login"
                 control={control}
                 rules={{
-                  required: "Укажите email",
+                  required: "Введите email",
                   pattern: {
                     value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$/gm,
                     message: "Некорректный email",
@@ -41,10 +40,10 @@ function LoginForm({ loginHandler }) {
                 }}
                 render={({ field }) => (
                   <Form.Group className="mb-3">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Login</Form.Label>
                     <Form.Control
                       {...field}
-                      type="email"
+                      type="login"
                       isInvalid={!!errors.email}
                       placeholder="Введите email"
                     />
@@ -59,7 +58,7 @@ function LoginForm({ loginHandler }) {
                 name="password"
                 control={control}
                 rules={{
-                  required: "Укажите пароль",
+                  required: "Введите пароль",
                 }}
                 render={({ field }) => (
                   <Form.Group className="mb-3">
@@ -88,4 +87,4 @@ function LoginForm({ loginHandler }) {
   );
 }
 
-export default LoginForm;
+export default AdminLoginForm;

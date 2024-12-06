@@ -1,26 +1,22 @@
 // import React from "react";
 import { Outlet } from 'react-router-dom';
 // import Header from "./ui/Header";
-
 import { Container } from "react-bootstrap";
 import NavBar from "./ui/NavBar";
+import Loader from "../HOCs/Loader";
+import Cookie from "./ui/Cookie";
 import FeedbackForm from "./ui/FeedbackForm";
-
-
-
-
 import History from "./ui/History";
 
-
-function Layout() {
+function Layout({ logoutHandler, user }) {
   return (
     <>
-
-      <div>
-        <NavBar />
-        <History/>
-        <Outlet />
-        <FeedbackForm />
+      <Container>
+        <Loader className="loader" isLoading={user?.status === "logging"}>
+          <NavBar logoutHandler={logoutHandler} user={user} />
+          <History/>
+          <Outlet />
+          <FeedbackForm />
         <h1
           style={{
             textAlign: "center",
@@ -28,8 +24,9 @@ function Layout() {
         >
          
         </h1>
-      </div>
-
+          <Cookie />
+        </Loader>
+      </Container>
     </>
   );
 }
