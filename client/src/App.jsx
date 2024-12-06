@@ -58,6 +58,17 @@ function App() {
 
   const router = createBrowserRouter([
     {
+      path: "/admin",
+      element: (
+        <ProtectedRouter
+          isAllowed={user.status === "guest"}
+          redirectTo={"/clock"}
+        >
+          <LoginForm user={user} loginHandler={loginHandler} />
+        </ProtectedRouter>
+      ),
+    },
+    {
       path: "/",
       element: <Layout logoutHandler={logoutHandler} user={user} />,
       errorElement: <ErrorPage />,
@@ -70,17 +81,7 @@ function App() {
           path: "/clock",
           element: <ClockPage />,
         },
-        {
-          path: "/admin",
-          element: (
-            <ProtectedRouter
-              isAllowed={user.status === "guest"}
-              redirectTo={"/clock"}
-            >
-              <LoginForm user={user} loginHandler={loginHandler} />
-            </ProtectedRouter>
-          ),
-        },
+
         {
           path: "/contact",
           element: <Contact />,
