@@ -5,13 +5,13 @@ import Navbar from "react-bootstrap/Navbar";
 //import { NavLink } from "react-router-dom";
 
 export default function NavBar({ logoutHandler, user }) {
-    console.log(user);
-    
+  console.log(user);
+
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container className="navbar">
         <Navbar.Brand href="/">
-          {user.status === "logged" ? user.user.email : "Guest"}
+          {user.status === "logged" ? "" : ""}
         </Navbar.Brand>
 
         <Nav className="me-auto">
@@ -21,7 +21,9 @@ export default function NavBar({ logoutHandler, user }) {
 
           {user.status === "logged" && (
             <>
-              <button className="nav-link" onClick={logoutHandler}>Выйти</button>
+              <button className="nav-link" onClick={logoutHandler}>
+                Выйти
+              </button>
             </>
           )}
         </Nav>
