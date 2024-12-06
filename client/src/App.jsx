@@ -12,6 +12,7 @@ import LoginForm from './components/ui/LoginForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ClockPage from './components/pages/ClockPage';
 // import ClockCard from './components/ui/ClockCard';
+// import "../../assets/styles/style.css";
 
 
 
