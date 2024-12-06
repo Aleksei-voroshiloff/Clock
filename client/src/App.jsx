@@ -18,7 +18,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import ClockCard from './components/ui/ClockCard';
 // import "../../assets/styles/style.css";
 
-import Contact from "./components/ui/Contact";
+
+// import ClockPage from './components/pages/ClockPage';
+import Contact from './components/ui/Contact';
+import ClockRedax from './components/pages/ClockRedax';
+
+
+
 
 import ClockPage from "./components/pages/ClockPage";
 import ProtectedRouter from "./HOCs/ProtectedRouter";
@@ -85,8 +91,11 @@ function App() {
           path: "/contact",
           element: <Contact />,
         },
-        { path: "/signin", element: <LoginForm /> },
-        { path: "*", element: <ErrorPage /> },
+
+        { path: '/signin', element: <LoginForm /> },
+        { path: '*', element: <ErrorPage /> },
+        { path: '/clock/redax', element: <ClockRedax /> },
+
       ],
     },
   ]);
