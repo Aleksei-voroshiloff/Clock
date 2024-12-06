@@ -29,6 +29,7 @@ export default function ClockPage() {
   return (
     <div className="carousel">
       <Carousel interval={carouselInterval}>
+
         {clocks.map((clock) => (
           <Carousel.Item key={clock.id}>
             <img

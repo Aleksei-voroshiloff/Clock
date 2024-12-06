@@ -1,6 +1,18 @@
 body {
+
+  background: rgb(24, 18, 2);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 18, 2, 1) 0%,
+    rgba(83, 70, 58, 1) 35%,
+    rgb(153, 134, 116) 100%
+  );
+  font-family: "Merriweather", sans-serif;
+  
+
   background-image: url('../../img/grungeblackconcretetexturedbackground.jpg');
   font-family: 'IBM Plex Serif';
+
 }
 
 h1 {
@@ -82,11 +94,5 @@ h2 {
   display: flex; /* Flexbox для выравнивания */
   justify-content: space-between; /* Распределение элементов */
   align-items: center; /* Вертикальное выравнивание */
-}
-
-.navbar a {
-  color: white; /* Цвет ссылок */
-  text-decoration: none; /* Убираем подчеркивание */
-  padding: 10px 15px; /* Отступы для ссылок */
 }
 

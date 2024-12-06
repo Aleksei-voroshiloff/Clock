@@ -44,7 +44,9 @@ const FeedbackForm = () => {
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         {({ setFieldValue }) => (
           <Form>
-            <h2 className="text-center mb-4">Форма для заказов</h2>
+
+            <h2 id='feedback' className="text-center mb-4">Форма обратной связи</h2>
+
 
             <BootstrapForm.Group controlId="name">
               <BootstrapForm.Label style={{fontSize: "25px"}}>Имя</BootstrapForm.Label>

@@ -5,7 +5,7 @@ import '../../../public/assets/styles/animation.css';
 export default function History() {
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-4">Добро пожаловать в "Время Чудес"</h1>
+      <h1 id='history' className="text-center mb-4">Добро пожаловать в "Время Чудес"</h1>
       <Row>
         <Col md={6}>
           <Card
