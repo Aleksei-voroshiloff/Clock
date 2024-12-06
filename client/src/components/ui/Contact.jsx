@@ -8,7 +8,14 @@ const Contact = () => {
       <h1 className="text-center mb-4">Связаться с нами</h1>
       <Row>
         <Col md={6}>
-          <Card className="mb-4" style={{backgroundColor: "rgb(153, 134, 116)", boxShadow: '5px 5px 20px rgba(0, 0, 0, 10)',   color:" #f4f4f4"}}>
+          <Card
+            className="mb-4"
+            style={{
+              backgroundColor: '#787777',
+              boxShadow: '5px 5px 20px rgba(0, 0, 0, 10)',
+              color: ' #f4f4f4',
+            }}
+          >
             <Card.Body>
               <Card.Title>Наши Контакты</Card.Title>
               <Card.Text>
@@ -24,7 +31,14 @@ const Contact = () => {
           </Card>
         </Col>
         <Col md={6}>
-          <Card className="mb-4" style={{backgroundColor: "rgb(153, 134, 116)", boxShadow: '5px 5px 20px rgba(0, 0, 0, 10)',  color:" #f4f4f4"}}>
+          <Card
+            className="mb-4"
+            style={{
+              backgroundColor: '#787777',
+              boxShadow: '5px 5px 20px rgba(0, 0, 0, 10)',
+              color: ' #f4f4f4',
+            }}
+          >
             <Card.Body>
               <Card.Title>Социальные Сети</Card.Title>
               <Card.Text>
@@ -43,7 +57,6 @@ const Contact = () => {
                   href="https://facebook.com/vremchudes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  
                 >
                   facebook.com/vremchudes
                 </a>
@@ -64,7 +77,13 @@ const Contact = () => {
       </Row>
       <div className="text-center mt-4">
         <Link to="/">
-          <Button variant="secondary" href="/" style={{backgroundColor: "black", borderColor: "black"}}>Вернуться назад</Button>
+          <Button
+            variant="secondary"
+            href="/"
+            style={{ backgroundColor: 'black', borderColor: 'black' }}
+          >
+            Вернуться назад
+          </Button>
         </Link>
       </div>
     </Container>
