@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-import {
-  Navigate,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import ErrorPage from "./components/pages/ErrorPage";
 // import MainPage from './components/pages/MainPage';
@@ -13,7 +9,15 @@ import Layout from "./components/Layout";
 import LoginForm from "./components/ui/LoginForm";
 
 // import RegisterForm from './components/ui/RegisterForm';
-import "bootstrap/dist/css/bootstrap.min.css";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ClockPage from './components/pages/ClockPage';
+// import ClockCard from './components/ui/ClockCard';
+// import "../../assets/styles/style.css";
+
+// import ClockPage from './components/pages/ClockPage';
+import Contact from './components/ui/Contact';
+
 
 import ClockPage from "./components/pages/ClockPage";
 import ProtectedRouter from "./HOCs/ProtectedRouter";
@@ -54,6 +58,7 @@ function App() {
     {
       path: "/",
       element: <Layout logoutHandler={logoutHandler} user={user} />,
+
       errorElement: <ErrorPage />,
       children: [
         {
@@ -75,7 +80,11 @@ function App() {
             </ProtectedRouter>
           ),
         },
-        { path: "*", element: <ErrorPage /> },
+          path: '/contact',
+          element: <Contact />,
+        },
+        { path: '/signin', element: <LoginForm /> },
+        { path: '*', element: <ErrorPage /> },
       ],
     },
   ]);
