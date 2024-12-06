@@ -12,12 +12,12 @@ export default function NavBar({ logoutHandler, user }) {
     console.log(user);
     
   return (
-    <Navbar className="fixed-top" bg="dark" data-bs-theme="dark"
-      <Container className="navbar">
-        <Navbar.Brand href="/">logo</Navbar.Brand>
-     <Nav className="me-auto">
-          {user.status === "logged" ? user.user.email : "🕰️"}
-        </Navbar.Brand>
+    <Navbar className="fixed-top" bg="dark" data-bs-theme="dark">
+        <Container className="navbar">
+         <Navbar.Brand href="/">🕰️TIME MAGIC</Navbar.Brand>
+            <  Nav className="me-auto">
+          {/* {user.status === "logged" ? user.user.email : "🕰️"} */}
+             
           {user.status === "logged" && (
             <>
               <button className="nav-link" onClick={logoutHandler}>Выйти</button>

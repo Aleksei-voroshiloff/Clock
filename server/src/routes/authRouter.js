@@ -44,7 +44,7 @@ authRouter.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ where: { email } });
     if (!user) {
-      return res.status(400).json({ error: 'Не верный логин или пароль' });
+      return res.status(400).json({ error: 'Не верный логин' });
     }
 
     const isValidPassword = await bcrypt.compare(password, user.password);

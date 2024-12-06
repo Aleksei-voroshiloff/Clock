@@ -11,10 +11,8 @@ import FeedbackForm from './ui/FeedbackForm';
 
 import { Container } from "react-bootstrap";
 import NavBar from "./ui/NavBar";
-import FeedbackForm from "./ui/FeedbackForm";
 import History from "./ui/History";
-import { Clock3d } from './ui/Clock3d';
-
+// import { Clock3d } from './ui/Clock3d';
 import '../../public/assets/styles/style.css'; // Импортируем стили"
 
 

@@ -56,10 +56,10 @@ export default function ClockPage() {
                         <div className="desc">{clock.description}</div>
                         <div >
                           <Link to={"/clock/redax"} >
-                          <Button style={{ paddingBottom: '30px', margin: "10px"}} variant="warning"> Изменить
+                          <Button style={{ paddingBottom: '30px', marginRight: "30px"}} variant="warning"> Изменить
                           </Button>
                           </Link>
-                        <Button style={{ paddingBottom: '30px', margin: "10px"}} variant="dark" onClick={togglePopup}>Назад</Button>
+                        <Button style={{ paddingBottom: '30px', marginRight: "50px"}} variant="dark" onClick={togglePopup}>Назад</Button>
                         </div>
                         
                       </div>

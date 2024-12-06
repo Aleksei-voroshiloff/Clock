@@ -23,15 +23,15 @@ button:hover {
   align-items: center;
 }
 .popup-content {
-  width: 60%;
+  width: 52%;
   height: 55%;
   display: flex;
   align-items: center;
   background: linear-gradient(
     90deg,
-    rgba(24, 18, 2, 1) 0%,
-    rgba(83, 70, 58, 1) 35%,
-    rgb(153, 134, 116) 100%
+    rgba(24, 18, 2, 0.251) 0%,
+    rgba(83, 70, 58, 0.205) 35%,
+    rgba(70, 52, 36, 0.138) 100%
   );
 
   border-radius: 5px;

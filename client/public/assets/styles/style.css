@@ -1,12 +1,12 @@
 body {
 
-  background: rgb(24, 18, 2);
+  /* background: rgb(24, 18, 2);
   background: linear-gradient(
     90deg,
     rgba(24, 18, 2, 1) 0%,
     rgba(83, 70, 58, 1) 35%,
     rgb(153, 134, 116) 100%
-  );
+  ); */
   font-family: "Merriweather", sans-serif;
   
 
@@ -15,9 +15,20 @@ body {
 
 }
 
+#history{
+  color: #bbb9b9;
+  text-shadow: 2px 4px 0 rgb(0, 0, 0);
+  padding-top: 5%;
+}
+
+#feedback{
+  color: #bbb9b9;
+  text-shadow: 2px 4px 0 rgb(0, 0, 0);
+}
+
 h1 {
   color: #bbb9b9;
-  border-color: #4e3b31;
+  border-color: #d85d1a;
   font-size: 60px;
   padding-bottom: 40px;
   cursor: pointer;
